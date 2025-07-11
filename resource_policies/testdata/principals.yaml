@@ -1,0 +1,14 @@
+principals:
+  sally:
+    id: example.user@yourapp.example.com
+    roles:
+    - USER
+    attr:
+      ip: 10.20.255.255
+
+  ian:
+    id: ian
+    roles:
+    - ADMIN
+
+

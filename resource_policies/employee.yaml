@@ -1,0 +1,23 @@
+---
+apiVersion: api.cerbos.dev/v1
+resourcePolicy:
+  version: "default"
+  # Importing `common_roles` in so they can be used in the resource policy.
+  importDerivedRoles:
+    - common_roles
+
+  # This resource file is reviewed for when checking permissions when a resource
+  # is of `kind` "employee:object"
+  resource: "employee"
+
+  rules:
+    - actions: ["view:id", "view:name"]
+      effect: EFFECT_ALLOW
+      roles:
+        - "*"
+
+    - actions: ["view:salary"]
+      effect: EFFECT_ALLOW
+      roles:
+        - ADMIN
+

@@ -1,0 +1,42 @@
+name: Employee test suite
+description: Tests for verifying the employee resource policy
+
+tests:
+  - name: User Roles
+    input:
+      principals:
+        - sally
+      resources:
+        - employee1
+      actions:
+        - view:id
+        - view:name
+        - view:salary
+
+    expected:
+      - principal: sally
+        resource: employee1
+        actions:
+          view:id: EFFECT_ALLOW
+          view:name: EFFECT_ALLOW
+          view:salary: EFFECT_DENY
+
+  - name: Admin Roles
+    input:
+      principals:
+        - ian
+      resources:
+        - employee1
+      actions:
+        - view:id
+        - view:name
+        - view:salary
+
+    expected:
+      - principal: ian
+        resource: employee1
+        actions:
+          view:id: EFFECT_ALLOW
+          view:name: EFFECT_ALLOW
+          view:salary: EFFECT_ALLOW
+

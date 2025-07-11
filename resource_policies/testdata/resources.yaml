@@ -1,0 +1,6 @@
+resources:
+  employee1:
+    id: employee1
+    kind: employee
+
+
