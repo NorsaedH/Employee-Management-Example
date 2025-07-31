@@ -17,7 +17,7 @@ resourcePolicy:
         - "*"
 
     - actions: ["view:salary"]
-      effect: EFFECT_ALLOW
+      effect: EFFECT_DENY
       roles:
         - ADMIN
 
